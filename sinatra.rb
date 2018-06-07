@@ -35,8 +35,7 @@ get '/check_lotto' do
         end
     end
     count = 0
-    check_bonus = true
-    while(count < 6 and check_bonus)
+    while(count < 5 ) do
         my_numbers = *(1..45)
         my_lotto = my_numbers.sample(6).sort
         
@@ -49,7 +48,6 @@ get '/check_lotto' do
             msg = msg + "미쳤다리.. 1등임.. 이게뭐야 ㅠㅠ"
         when 5
             if numbers.include?(bonus)
-                check_bonus = false
                 msg = msg + "미쳤.. 님 방금 4천만원 날림 ㅎㅎ"
             else
                 msg = msg + "여기부터 미련없음 3등임"
